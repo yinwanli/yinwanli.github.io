@@ -1,0 +1,381 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>尹万里的个人简历</title>
+
+</head>
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<!--小游戏js引入开始-->
+<script type="text/javascript" src="js/tinyHeartMain.js"></script>
+<script type="text/javascript" src="js/commonFunctions.js"></script>
+<script type="text/javascript" src="js/background.js"></script>
+<script type="text/javascript" src="js/ane.js"></script>
+<script type="text/javascript" src="js/fruit.js"></script>
+<script type="text/javascript" src="js/mom.js"></script>
+<script type="text/javascript" src="js/collision.js"></script>
+<script type="text/javascript" src="js/baby.js"></script>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/wave.js"></script> 
+<script type="text/javascript" src="js/halo.js"></script> 
+<script type="text/javascript" src="js/dust.js"></script>
+<!--小游戏js引入结束-->
+<script type="text/javascript" src="js/main.js"></script>
+<style>
+	/*样式重置开始*/
+	body,div,ul,li,dl,dd,ol,h1,h2,h3,h4,h5,h6,p,img{margin:0;padding:0;font-size:13px;}
+	a,a img{border:0;text-decoration:none;}
+	a:hover {text-decoration:underline;}
+	ul{list-style:none;}
+	/*样式重置结束*/
+	
+	#box{width:1000px;height:800px;margin:0 auto;border:15px solid #E8E8E8;position:relative;}
+	.main{height:650px;display:none;}
+	
+	/*头部样式开始*/
+	#header{height:100px;}
+	#header .hTop{height:70px;text-align:center;background:url(img/003.jpg)}
+	#header .hTop strong{font:bold 40px/70px Arial,sans-serif;color:white;letter-spacing:35px }
+	#header .nav{background:#C6DDFB}
+	#header ul{height:30px;list-style:none;}
+	#header li,#header li a{float:left;}
+	#header li a span{line-height:30px;font:16px/30px Arial,sans-serif;letter-spacing:5px;padding:0px 30px;}
+	#header li a:visited{color:#888888;}
+	#header li a:hover{color:red;background:#3366FF;border-radius:15px;cursor:pointer}
+	.active{color:white;background:#666666;border-radius:15px;text-decoration:none;}
+	/*头部样式结束*/
+	
+	/*中部选项卡1样式开始*/
+	
+	.mainInfo .left{width:203px;height:650px;background:#254665;position:relative;float:left;}
+	.mainInfo .left .photo{width:145px;height:190px;position:absolute;left:29px;top:25px;}
+	.mainInfo .left .myInfo{position:absolute;left:9px;top:215px;color:white;font-weight:bold; }
+	.mainInfo .left .myInfo li{margin:11px 9px;}
+	.mainInfo .left .myInfo h2{margin-top:38px;font-size:16px;}
+	
+	.mainInfo .right{width:797px;height:650px;float:right;position:relative;}
+	.right .info{position:absolute;left:50px;top:10px;}
+	.info h2{font-size:18px;margin-top:20px;margin-bottom:-5px;}
+	.info h3{font-size:15px;margin-top:15px;}
+	.info p{margin-top:5px;width:700px;}
+	.info h{margin-top:10px;}
+	/*中部选项卡1样式结束*/
+	
+	/*中部选项卡2样式开始*/
+	.mainProject{background:#3399FF;}
+	.btn input{margin:5px;}
+	.mainProject .drag{width:100px;height:100px;background:#FF0033;position:absolute;color:white;line-height:100px;font:bold 18px;text-align:center;cursor:pointer;}
+	.text p{border:10px solid #C9C3C6;background:#FCFCCD;width:550px;}
+	.btn input{width:350px;}
+	/*中部选项卡2样式结束*/
+	
+	/*中部选项卡3样式开始*/
+	.anyValue{height:150px;background:#CCCCCC;padding:5px}
+	#wid,#hei,#opa,#fon,#all{width:80px;height:80px;border:3px solid #000000;float:left;background:red;;text-align:center;line-height:80px;padding:3px;filter:alpha(opacity=90);opacity:0.9;margin:20px 30px auto 30px;display:inline-block}
+	
+			/*图片轮换播样式开始*/
+	.play{width:400px;height:430px;margin:5px auto;background:#999999;}
+	.bigPic{width:400px;height:320px;position:relative;overflow:hidden;}
+	.bigPic li{width:400px;height:320px;position:absolute;top:0;left:0;z-index:0;background:url(img/loading.gif) no-repeat center center;overflow:hidden;}
+	.maskLeft{width:200px;height:320px;position:absolute;top:0;left:0;z-index:2000;filter:alpha(opacity:0);opacity:0;cursor:default;}
+	.maskRight{width:200px;height:320px;position:absolute;top:0;right:0;z-index:2000;filter:alpha(opacity:0);opacity:0;cursor:default;}
+	
+	.bigPic .pre{width:60px;height:60px;background:url(img/btn.gif) no-repeat;position:absolute;top:130px;left:10px;z-index:2001;filter:alpha(opacity:0);opacity:0;cursor:pointer;}
+	.bigPic .next{width:60px;height:60px;background:url(img/btn.gif) no-repeat 0 -60px;position:absolute;top:130px;right:10px;z-index:2001;filter:alpha(opacity:0);opacity:0;cursor:pointer;}
+	.bigPic .text{position:absolute;left:10px;top:300px;z-index:2000;color:#ccc;font-weight:bold;font-size:15px;}
+	.bigPic .num{position:absolute;right:10px;top:300px;z-index:2000;color:#ccc;font-size:15px;}
+	.bigPic .bg{width:400px;height:20px;background:black;position:absolute;bottom:0;left:0;filter:alpha(opacity:60);opacity:0.6;z-index:1999;}
+	
+	.smallPic{width:380px;height:96px;position:relative;left:10px;top:7px;overflow:hidden;}
+	.smallPic ul{height:96px;position:absolute;top:0;left:0;width:780px}
+	.smallPic li{width:120px;height:96px;float:left;padding-right:10px;background:url(img/loading.gif) no-repeat center center;cursor:pointer;filter:alpha(opacity:60);opacity:0.6;}
+	.smallPic img{width:120px;height:96px;}
+			/*图片轮换播样式结束*/
+			/*链式弹窗开始*/
+	mainMove{height:650px;}
+	.page{position:fixed;_position:absolute;right:0;bottom:0;}
+	.page #bottom{width:203px;height:50px;background:url(img/minibar.png) no-repeat 0 0;position:absolute;right:-165px;bottom:0;z-index:2001;}
+	.page #nav{width:125px;height:22px;margin:5px 0 0 43px;}
+	.page #nav li{width:25px;float:left;}
+	.page #nav li a{height:22px;width:25px;display:block;}
+	.page #nav li a:hover{background:url(img/minibar.png) no-repeat 0 -51px;}
+	.page #nav .li1 a:hover{background-position:-25px -51px}
+	.page #nav .li2 a:hover{background-position:-50px -51px}
+	.page #nav .li3 a:hover{background-position:-75px -51px}
+	.page #nav .li4 a:hover{background-position:-100px -51px}
+	.page .text{width:160px;height:16px;color:#FFFFFF;margin:4px 0 0 8px;overflow:hidden;}
+	.page #btn{width:33px;height:50px;position:absolute;right:0;bottom:0;display:block;z-index:2002;}
+	.page .butHide{background:url(img/minibar.png) no-repeat -170px 0;}
+	.page .butHide:hover{background-position:-203px 0;}
+	.page .butShow{background:url(img/minibar.png) no-repeat -236px 0;}
+	.page .butShow:hover{background-position:-269px 0;}
+	.page #top{width:200px;height:315px;padding:0 0 48px;position:absolute;right:1px;bottom:-315px;z-index:2000;display:none;}
+	.page .bg{width:200px;height:315px;background:url(img/mini_jpgs.jpg) no-repeat 0 0;opacity:0.9;filter:alpha(opacity:90);position:absolute;right:0;top:0;}
+	.page .nav2_bg{width:34px;height:176px;position:absolute;left:0;bottom:48px;background:url(img/mini_jpgs.jpg) no-repeat 0 -139px;}
+	.page #list{width:34px;height:139px;background:url(img/minibar.png) no-repeat scroll 0 -255px;position: absolute;left: 0;top: 2px;}
+	.page #list a{height:27px;line-height:25px;color:#FFFFFF;text-align:center;text-decoration:none;display:block;}
+	.page #list .show{color: #FF9900;}
+	.page #list a:hover{color:#FFFF00;}
+	.page .close{width:9px;height:9px;background:url(img/minibar.png) no-repeat 0 -76px ;cursor:pointer;position:absolute;right:10px;top:14px;}
+	.page .topRight{width:150px;height:285px;color:#FFFFFF;overflow:hidden;position:absolute;right:6px;top:28px;}
+	
+	
+			/*链式弹窗结束*/
+	
+	
+	/*中部选项卡3样式结束*/
+	
+	/*中部选项卡4样式开始*/
+	.mainGame{}
+	.all_bg{position:relative;width:800px;height:600px;float:left;background:url(img/gameBg.jpg) no-repeat;}
+	#canvas1{position:absolute;top:0;left:0;z-index:1;}
+	#canvas2{position:absolute;top:0;left:0;z-index:0;}
+	#title{height:50px;line-height:50px;background:#0064B9;text-align:center;font-size:24px;color:#FF8D4B;}
+	#gameRight{width:200px;height:600px;background:#CCCCCC;display:inline-block;float:right;}
+	#gameRight input{width:200px;height:50px;font-size:22px;color:red;}
+	#gameRight #gameDescription{padding:5px;}
+	#gameRight h3{font-size:16px;margin-top:5px;margin-bottom:10px;}
+	#gameRight span{line-height:25px;font-size:13px;color:blue}
+	/*中部选项卡4样式结束*/
+	
+	/*底部样式*/
+	#footer{width:975px;height:50px;background:url(img/footBg.jpg);line-height:50px;font-size:20px;text-align:left; position:relative;padding-left:25px;}
+	#footer span{text-align:right;position:absolute;right:25px;}
+	
+</style>
+
+<body>
+    <div id="box">
+        <!--头部开始-->
+        <div id="header">
+            <div class="hTop"><strong>个人简历</strong></div>
+            <div class="nav">
+                <ul class="list">
+                    <li class="resume active"><a src="#"><span>个人介绍</span></a></li>
+                    <li class="projects"><a src="#"><span>小项目</span></a></li>
+                    <li class="move"><a src="#"><span>运动框架</span></a></li>
+                    <li class="games"><a src="#"><span>小游戏</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!--头部结束-->
+        
+        <!--中间主体开始-->
+        <!--第一个选项卡内容开始-->
+       
+        <div class="mainInfo main" style="display:block;">
+            <!--左侧内容开始-->
+            <div class="left">
+                <div class="photo"><img src="img/photo-resume.jpg" alt="photo" title="照片"/></div>
+                <div class="myInfo">
+                    <h2>自我介绍</h2>
+                    <ul>
+                        <li>姓名：&nbsp;尹万里</li>
+                        <li>性别：男</li>
+                        <li>学历：全日制硕士</li>
+                        <li>学校：中国科技大学</li>
+                        <li>专业：生物工程</li>
+                        <li>手机：<span>+86 1709 346 8110</span></li>
+                        <li>邮箱：<span>409666040@qq.com</span></li>
+                    </ul>
+                    <h2>求职意向</h2>
+                    <ul>
+                        <li>web前端开发</li>
+                        <li>目前离职前调休状态</li>
+                        <li>期望月薪，面议</li>
+                    </ul>
+                </div>
+            </div>
+            <!--左侧内容结束-->
+            
+            <!--右侧内容开始-->
+            <div class="right">
+                <ul class="info">
+                    <li class="education">
+                        <h2>教育背景</h2><hr />
+                        <h3>2005.09--2009.07</h3>
+                        <p>河南科技大学生物技术专业学习</p>
+                        <p>获得国家励志奖学金一次、校级一等奖学金数次、校级数学竞赛二等奖、校优秀大学毕业生等荣誉</p>
+                        <h3>2009.09--2011.07</h3>
+                        <p>中科大生命科学院生物化学和分子生物学专业学习，曾在中科院上海药物研究所实习1年</p>
+                        <p>获得东港奖学金</p>
+                    </li>
+                    <li class="work">
+                        <h2>工作经历</h2><hr />
+                        <h3>2011.12--2012.12</h3>
+                        <p>深圳翰宇药业股份有限公司研发部，担任质量研究员</p>
+                        <h3>2012.12--至今</h3>
+                        <p>深圳万乐药业有限公司，担任抗体中心仪器分析负责人和化药中心项目二组质量主管</p>
+                    </li>
+                    <li class="ability">
+                        <h2>前端专业技能</h2><hr />
+                        <p>Photoshop简单切图；<br />
+                            熟悉常见的熟悉浏览器兼容性及解决方法；<br />
+                            熟悉HTML、CSS、JaveScript以及jquery，能够熟练使用它们进行web标准化页面布局，能够手工编写和修改代码；<br />
+                            熟悉Firebug等开发调试工具；熟悉DOM/BOM/Ajax/Jsonp；<br />
+                        </p>
+                        
+                    </li>
+                    <li class="selfEvaluation">
+                        <h2>自我评价</h2><hr />
+                        <p>本人来自贫困的农村，有较强的吃苦耐劳精神，环境适应能力强，有自我学习和再学习的钻研精神；研究生阶段曾任工程硕士班长，在万乐药业抗体中心担任仪器组的负责人以及化药中心项目2组质量主管，责任感强，有良好的服务意识与团队合作意识，善于沟通，工作自主驱动，抗压能力强。
+                        </p>
+                    </li>
+                 </ul>
+            </div>
+            <!--右侧内容结束-->
+        </div>
+        <!--第一个选项卡内容结束-->
+        
+         <!--第二个选项卡内容开始-->
+        <div class="mainProject main">
+            <div class="btn">
+            <input class="btn1" type="button" value="点我：数组【20px,60px,28px,3px】带单位排序"/>
+            <input class="text1" placeholder="结果在此显示" type="text" /><br/>
+            <input class="btn2" type="button" value="点我：数组【2,3,6,2,6】去重"/>
+            <input class="text2" placeholder="结果在此显示" type="text" /><br/>
+            <input class="btn3" type="button" value="点我：字符串'string'倒序"/>
+            <input class="text3" placeholder="结果在此显示" type="text" /><br/>
+            <input class="btn4" type="button" value="正则：检测邮箱是否输入正确" />
+            <input class="text4" placeholder="请输入一个邮箱" type="text" /><br/>
+            <input class="btn5" type="button" value="0-100中随机生成10个不重复的数字（方法1）"/>
+            <input class="text5" placeholder="方法1结果在此显示" type="text" /><br/>
+            <input class="btn6" type="button" value="0-100中随机生成10个不重复的数字（方法2）"/>
+            <input class="text6" placeholder="方法2结果在此显示" type="text" /><br/>
+            <input class="btn7" type="button" value="0-100中随机生成10个不重复的数字（方法3）"/>
+            <input class="text7" placeholder="方法3结果在此显示" type="text" /><br/>
+            
+            <input class="btn9" type="button" value="点我：遍历目前浏览器默认属性设置" /><br/>
+            </div>
+            <div class="text">
+                <p class="scaleText"><span id="scaleSpan">User Experience Design(用户体验设计)，简称UED。UED是进行产品策划的主力之一，他们用自己的知识、经验、设计能力拿出设计方案。UED不只是互联网专家，还是行业专家。能够用自己的互联网知识来设计出行业专家想实现的操作，而付诸以商业营销。UED主要是从IT行业发展而来的。在计算机大型机的年代，计算机运算能力有限，为了更有效率地、更充分地利用计算机，采取的方式是：由“人类” 来适应 “程序（软件） ”、普通用户适应程序员的偏好与习惯、用户适应软件供应商提供的产品</span>......<a id="scaleA" href="javascript:;"><< 收缩</a></p>
+            </div>
+            <div class="drag">点我随意拖动</div>
+        </div>
+        <!--第二个选项卡内容结束-->
+        
+        <!--第三个选项卡内容开始-->
+        <div class="mainMove main">
+            <div class="anyValue">
+                <div id="wid">宽变化</div>
+                <div id="hei">高变化</div>
+                <div id="opa">透明度</div>
+                <div id="fon">字大小</div>
+                <div id="all">ALL</div>
+            </div>
+            
+            <div id="images" class="play">
+                <ul class="bigPic">
+                
+                    <div class="pre"></div>
+                    <div class="next"></div>
+                    
+                    <div class="text">王&nbsp;凯</div>
+                    <div class="num">1/6</div>
+                    
+                    <a class="maskLeft" href="javascript:;"></a>
+                    <a class="maskRight" href="javascript:;"></a>
+                    <div class="bg"></div>
+                    
+                    <li style="z-index:1;"><img src="img/1.jpg" /></li>
+                    <li><img src="img/2.jpg" /></li>
+                    <li><img src="img/3.jpg" /></li>
+                    <li><img src="img/4.jpg" /></li>
+                    <li><img src="img/5.jpg" /></li>
+                    <li><img src="img/6.jpg" /></li>
+                </ul>
+                
+                <div class="smallPic">
+                    <ul>
+                        <li style="filter:alpha(opacity:100);opacity:1"><img src="img/1.jpg" /></li>
+                        <li><img src="img/2.jpg" /></li>
+                        <li><img src="img/3.jpg" /></li>
+                        <li><img src="img/4.jpg" /></li>
+                        <li><img src="img/5.jpg" /></li>
+                        <li><img src="img/6.jpg" /></li>
+                    </ul>
+                </div>
+              </div>
+        
+        
+            
+            <div class="page">
+                <div id="bottom">
+                    <ul id='nav'>
+                        <li><a href="###"></a></li>
+                        <li class="li1"><a href="#"></a></li>
+                        <li class="li2"><a href="#"></a></li>
+                        <li class="li3"><a href="#"></a></li>
+                        <li class="li4"><a href="#"></a></li>      
+                    </ul>
+                    <h2 class="text">链式展开弹窗</h2>
+                </div>
+                <a class="butShow" id="btn" href="#"></a>
+                <div id="top">
+                    <div class="bg"></div>
+                    <div class="nav2_bg"></div>
+                    <ul id="list">       
+                        <li><a  class="show" href="#" target="_blank">天气</a></li>
+                        <li class="tab2"><a href="#" target="_blank">星座</a></li>
+                        <li class="tab3"><a href="#" target="_blank">排行</a></li>
+                        <li class="tab4"><a href="#" target="_blank">热点</a></li>
+                        <li class="tab5"><a href="#" target="_blank">直播</a></li>
+                    </ul>
+                    <a class='close' id="btnClose"></a>
+                    <div class="topRight">  
+                        <div>深圳</div>      
+                        <div>	
+                            <div>     
+                                <strong><em>今天</em> (周二)</strong>           
+                                <img title="晴" src="img/01.gif" class="pic">         
+                            </div>    
+                            <span>25~30C°</span>
+                            <span>晴</span>
+                            <span>微风小于3级</span>   
+                        </div>      
+                        <div>    
+                            <div>     
+                                <strong><em>明天</em> (周三)</strong>           
+                                <img title="多云" src="img/02.gif"class="pic">         
+                            </div>    
+                            <span>23~29C°</span>
+                            <span>多云</span>
+                            <span>北风3-4级</span>   
+                        </div>      
+                        <div>    
+                            <div>     
+                                <strong><em>后天</em> (周四)</strong>           
+                                <img title="晴" src="img/01.gif"class="pic">         
+                            </div>    
+                            <span>27~32C°</span>
+                            <span>晴</span>
+                            <span>北风3-4级 转 微风小于3级</span>   
+                        </div>     
+                    </div>
+                </div>
+            </div>
+         </div>
+        <!--第三个选项卡内容结束-->
+        
+        <div class="mainGame main">
+            <div id="title">爱心鱼</div>
+            <div class="all_bg">
+                <canvas id="canvas1" width="800" height="600" >您的浏览器版本太低，请更新到最新版本</canvas>
+                <canvas id="canvas2" width="800" height="600" >您的浏览器版本太低，请更新到最新版本</canvas>
+            </div>
+           <div id="gameRight">
+                <input id="control" type="button" value="开始游戏" />
+                <div id="gameDescription"><h3>游戏简介：</h3><span>
+鱼妈妈（大鱼）吃海葵果实，然后喂鱼宝宝（小鱼）获得游戏分数，其中黄色果实一颗积100分，蓝色果实一颗积200分。游戏中，鱼宝宝会跟随鱼妈妈游动，但是追不上鱼妈妈，如果不及时喂食，鱼宝宝精力（小鱼身体颜色变淡）下降到一定程度，游戏结束。</span></div>
+
+           </div>
+        </div>   
+       	
+        <!--中间主体结束-->
+        
+        
+       
+        <div id="footer">珍惜时间,就是珍惜生命<span id="spanTime"></span></div>
+    </div>
+</body>
+</html>
