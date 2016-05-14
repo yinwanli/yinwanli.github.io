@@ -34,7 +34,7 @@
 	
 	/*头部样式开始*/
 	#header{height:100px;}
-	#header .hTop{height:70px;text-align:center;background:url(img/003.jpg)}
+	#header .hTop{height:70px;text-align:center;background:url(img/headTop.jpg)}
 	#header .hTop strong{font:bold 40px/70px Arial,sans-serif;color:white;letter-spacing:35px }
 	#header .nav{background:#C6DDFB}
 	#header ul{height:30px;list-style:none;}
@@ -62,19 +62,35 @@
 	/*中部选项卡1样式结束*/
 	
 	/*中部选项卡2样式开始*/
-	.mainProject{background:#3399FF;}
-	.btn input{margin:5px;}
-	.mainProject .drag{width:100px;height:100px;background:#FF0033;position:absolute;color:white;line-height:100px;font:bold 18px;text-align:center;cursor:pointer;}
-	.text p{border:10px solid #C9C3C6;background:#FCFCCD;width:550px;}
-	.btn input{width:350px;}
+	.mainProject{background:#0099FF;position:relative}
+	.mainProject .text{display:inline-block;float:left;}
+	.btn{margin:6px;}
+	.btn input{width:290px;margin:5px 1px 5px 2px }
+	.text p{border:10px solid #C9C3C6;background:#FCFCCD;width:582px;}
+	
+	/*仿新浪微博开始*/
+	#chatBox{position:relative;width:390px;height:300px;float:left;margin-top:11px;}
+	#chatBoxUl{width:380px;height:245px;border:1px solid black;overflow:hidden;}
+	#chatBoxUl div{border-bottom:1px dashed #000000;padding:5px;filter:alpha(opacity:10);opacity:0.1;word-wrap:break-word;line-height:25px;}
+	#chatBox textarea{resize:none;}
+	#chatBox strong{color:red;}
+	/*仿新浪微博结束*/
+	
+	.mainProject #slideShow{width:1000px;height:304px;background:red;clear:both;position:absolute;bottom:0;}
+	.mainProject #relativeDiv{width:640px;height:220px;position:relative;background:red;margin:28px auto;background:#003399;}
+	#relativeDiv ul{position:absolute;left:0;top:0px;}
+	#relativeDiv ul li {width:160px;height:220px;float:left;}
+	#slideShow #pre{width:60px;height:60px;position:absolute;background:url(img/btn.gif) no-repeat;display:block;left:120px;top:124px;}
+	#slideShow #next{width:60px;height:60px;position:absolute;background:url(img/btn.gif) no-repeat 0 -60px;display:block;right:120px;top:124px;}
 	/*中部选项卡2样式结束*/
 	
 	/*中部选项卡3样式开始*/
 	.anyValue{height:150px;background:#CCCCCC;padding:5px}
-	#wid,#hei,#opa,#fon,#all{width:80px;height:80px;border:3px solid #000000;float:left;background:red;;text-align:center;line-height:80px;padding:3px;filter:alpha(opacity=90);opacity:0.9;margin:20px 30px auto 30px;display:inline-block}
-	
+	#wid,#hei,#opa,#fon,#all{width:80px;height:80px;border:3px solid #000000;background:red;;text-align:center;line-height:80px;padding:3px;filter:alpha(opacity=90);opacity:0.9;margin:20px 30px auto 30px;display:inline-block}
+	.mainMove #move{width:600px;height:490px;background:#0066CC;display:inline-block;}
+	.mainMove .drag{width:100px;height:100px;background:#FF0033;position:absolute;color:white;line-height:100px;font:bold 18px;text-align:center;cursor:pointer;}
 			/*图片轮换播样式开始*/
-	.play{width:400px;height:430px;margin:5px auto;background:#999999;}
+	.play{width:400px;height:430px;margin-top:25px;background:#999999;position:absolute;right:0;display:inline-block;}
 	.bigPic{width:400px;height:320px;position:relative;overflow:hidden;}
 	.bigPic li{width:400px;height:320px;position:absolute;top:0;left:0;z-index:0;background:url(img/loading.gif) no-repeat center center;overflow:hidden;}
 	.maskLeft{width:200px;height:320px;position:absolute;top:0;left:0;z-index:2000;filter:alpha(opacity:0);opacity:0;cursor:default;}
@@ -127,7 +143,7 @@
 	
 	/*中部选项卡4样式开始*/
 	.mainGame{}
-	.all_bg{position:relative;width:800px;height:600px;float:left;background:url(img/gameBg.jpg) no-repeat;}
+	.all_bg{position:relative;width:800px;height:600px;float:left;background:url(src/background.jpg) no-repeat;}
 	#canvas1{position:absolute;top:0;left:0;z-index:1;}
 	#canvas2{position:absolute;top:0;left:0;z-index:0;}
 	#title{height:50px;line-height:50px;background:#0064B9;text-align:center;font-size:24px;color:#FF8D4B;}
@@ -229,29 +245,48 @@
         
          <!--第二个选项卡内容开始-->
         <div class="mainProject main">
-            <div class="btn">
-            <input class="btn1" type="button" value="点我：数组【20px,60px,28px,3px】带单位排序"/>
-            <input class="text1" placeholder="结果在此显示" type="text" /><br/>
-            <input class="btn2" type="button" value="点我：数组【2,3,6,2,6】去重"/>
-            <input class="text2" placeholder="结果在此显示" type="text" /><br/>
-            <input class="btn3" type="button" value="点我：字符串'string'倒序"/>
-            <input class="text3" placeholder="结果在此显示" type="text" /><br/>
-            <input class="btn4" type="button" value="正则：检测邮箱是否输入正确" />
-            <input class="text4" placeholder="请输入一个邮箱" type="text" /><br/>
-            <input class="btn5" type="button" value="0-100中随机生成10个不重复的数字（方法1）"/>
-            <input class="text5" placeholder="方法1结果在此显示" type="text" /><br/>
-            <input class="btn6" type="button" value="0-100中随机生成10个不重复的数字（方法2）"/>
-            <input class="text6" placeholder="方法2结果在此显示" type="text" /><br/>
-            <input class="btn7" type="button" value="0-100中随机生成10个不重复的数字（方法3）"/>
-            <input class="text7" placeholder="方法3结果在此显示" type="text" /><br/>
-            
-            <input class="btn9" type="button" value="点我：遍历目前浏览器默认属性设置" /><br/>
-            </div>
             <div class="text">
+               <div class="btn">
+                <input class="btn1" type="button" value="点我：数组【20px,60px,28px,3px】带单位排序"/>
+                <input class="text1" placeholder="结果在此显示" type="text" /><br/>
+                <input class="btn2" type="button" value="点我：数组【2,3,6,2,6】去重"/>
+                <input class="text2" placeholder="结果在此显示" type="text" /><br/>
+                <input class="btn3" type="button" value="点我：字符串'string'倒序"/>
+                <input class="text3" placeholder="结果在此显示" type="text" /><br/>
+                <input class="btn4" type="button" value="正则：检测邮箱是否输入正确" />
+                <input class="text4" placeholder="请输入一个邮箱" type="text" /><br/>
+                <input class="btn5" type="button" value="0-100中随机生成10个不重复的数字（方法1）"/>
+                <input class="text5" placeholder="方法1结果在此显示" type="text" /><br/>
+                <input class="btn6" type="button" value="0-100中随机生成10个不重复的数字（方法2）"/>
+                <input class="text6" placeholder="方法2结果在此显示" type="text" /><br/>
+                <input class="btn7" type="button" value="0-100中随机生成10个不重复的数字（方法3）"/>
+                <input class="text7" placeholder="方法3结果在此显示" type="text" /><br/>
+               </div>  
+            
                 <p class="scaleText"><span id="scaleSpan">User Experience Design(用户体验设计)，简称UED。UED是进行产品策划的主力之一，他们用自己的知识、经验、设计能力拿出设计方案。UED不只是互联网专家，还是行业专家。能够用自己的互联网知识来设计出行业专家想实现的操作，而付诸以商业营销。UED主要是从IT行业发展而来的。在计算机大型机的年代，计算机运算能力有限，为了更有效率地、更充分地利用计算机，采取的方式是：由“人类” 来适应 “程序（软件） ”、普通用户适应程序员的偏好与习惯、用户适应软件供应商提供的产品</span>......<a id="scaleA" href="javascript:;"><< 收缩</a></p>
             </div>
-            <div class="drag">点我随意拖动</div>
+            
+           <!-- <div class="drag">点我随意拖动</div>-->
+            <div id="chatBox">
+                <div id="chatBoxUl"></div>
+                <textarea cols="51" rows="4"></textarea>
+                <span>仿微博发布效果：你还可以输入<strong>140</strong>个字。</span>
+                <input type="button" id="send" value="发送"/>
+            </div>
+            <div id="slideShow">
+            	<a id="pre" href="#"></a>
+                <a id="next" href="#"></a>
+                <div id="relativeDiv">
+                    <ul>
+                        <li><img src="img/a.jpg"/></li>
+                        <li><img src="img/b.jpg" /></li>
+                        <li><img src="img/c.jpg" /></li>
+                        <li><img src="img/d.jpg" /></li>
+                    </ul>
+                </div>
+            </div>
         </div>
+        
         <!--第二个选项卡内容结束-->
         
         <!--第三个选项卡内容开始-->
@@ -263,7 +298,10 @@
                 <div id="fon">字大小</div>
                 <div id="all">ALL</div>
             </div>
-            
+            <div id="move">
+            	
+            </div>
+            <div class="drag">点我随意拖动</div>
             <div id="images" class="play">
                 <ul class="bigPic">
                 
@@ -295,9 +333,9 @@
                         <li><img src="img/6.jpg" /></li>
                     </ul>
                 </div>
-              </div>
+            </div>
         
-        
+        	
             
             <div class="page">
                 <div id="bottom">
@@ -357,6 +395,8 @@
          </div>
         <!--第三个选项卡内容结束-->
         
+        <!--第四个选项卡内容开始-->
+        
         <div class="mainGame main">
             <div id="title">爱心鱼</div>
             <div class="all_bg">
@@ -366,11 +406,12 @@
            <div id="gameRight">
                 <input id="control" type="button" value="开始游戏" />
                 <div id="gameDescription"><h3>游戏简介：</h3><span>
-鱼妈妈（大鱼）吃海葵果实，然后喂鱼宝宝（小鱼）获得游戏分数，其中黄色果实一颗积100分，蓝色果实一颗积200分。游戏中，鱼宝宝会跟随鱼妈妈游动，但是追不上鱼妈妈，如果不及时喂食，鱼宝宝精力（小鱼身体颜色变淡）下降到一定程度，游戏结束。</span></div>
+鱼妈妈吃海葵（海底随海水摆动的植物）果实，然后喂鱼宝宝获得游戏分数，其中黄色果实一颗积100分，蓝色果实一颗积200分。游戏中，鱼宝宝会跟随鱼妈妈游动，但是追不上鱼妈妈，如果不及时喂食，鱼宝宝精力（身体颜色变淡）下降到一定程度，游戏结束。</span></div>
 
            </div>
         </div>   
-       	
+       	<!--第四个选项卡内容结束-->
+        
         <!--中间主体结束-->
         
         

@@ -107,6 +107,66 @@ window.onload=function()
 		});
 	//文字收缩结束
 	
+	//仿新浪微博开始
+	var maxLength=140;
+	$("#chatBox").find("textarea").keyup(function()
+	{
+		var len=$(this).val().length;
+		$("strong").html(maxLength-len);
+		
+		if(parseInt($("strong").html())<0)
+		{
+			$("strong").html("0");
+			$(this).val($(this).val().substring(0,141));
+		}
+	});
+	$("#send").click(function()
+	{
+		if(maxLength==$("strong").html()) alert("请输入内容");
+		else
+		{
+			var oDiv=$("<div>"+$("textarea").val()+"</div>");
+			oDiv.prependTo($("#chatBoxUl"));
+			
+			$("textarea").val("");
+			$("strong").html(maxLength);
+			
+			var iHeight=parseInt(oDiv.css("height"));
+			oDiv.css("height","0");
+			oDiv.animate({height:iHeight}).animate({opacity:100},300,"linear");
+		}
+	});
+	//仿新浪微博结束
+	
+	//图片无缝滚动开始
+	/*
+	var oDiv=document.getElementById("relativeDiv");
+	var oUl=oDiv.getElementsByTagName("ul");
+	
+	oUl.innerHTML+=oUl.innerHTML;
+	var aLi=oDiv.getElementsByTagName("li");
+	oUl.style.width=aLi[0].offsetWidth*aLi.length+"px";
+	var speed=3;
+	
+	function slide()
+	{
+		oUl.style.left=oUl.offsetLeft+speed+"px";
+		if(oUl.offsetLeft<-oUl.offsetWidth/2) oUl.style.left=0+"px";
+		if(oUl.offsetLeft>0) oUl.style.left=-oUl.offsetWidth+"px";
+	}
+	var timer=setInterval(slide,30);
+	oDiv.onmouseover=function()
+	{
+		clearInterval(timer);
+	}
+	oDiv.onmouseout=function()
+	{
+		timer=setInterval(slide,30);
+	}
+	oDiv.getElementsByTagName("a")[0].onclick=function(){speed=-5;};
+	oDiv.getElementsByTagName("a")[1].onclick=function(){speed=5;};*/
+	//图片无缝滚动结束
+	
 	//从0-100数字中随机产生10个不重复的数字函数开始
 	//第一种方法
 	function getRandom1()
@@ -128,8 +188,6 @@ window.onload=function()
 			//return s.slice(0,-1).split(",");也可以
 	}
 	
-	
-
 	//第二种方法
 	//思路:for循环从0到100的数组,然后将这101个数利用sort()随机打乱,然后通过将这个数组的length改写为10,便取到了10个不同的数
 	function getRandom2()
@@ -170,51 +228,6 @@ window.onload=function()
 		   });
 		//从0-100数字中随机产生10个不重复的数字函数结束
 		
-	//随意拖拽开始	
-	
-	$(".drag").mousedown(function(ev){
-		var x;
-		var y;
-		x=ev.pageX-$(this).offset().left;
-		y=ev.pageY-$(this).offset().top;
-		$(document).mousemove(function(ev){
-			$(".drag").css("left",ev.pageX-x);
-			$(".drag").css("top",ev.pageY-y);
-			});
-		$(document).mouseup(function(){
-			$(document).off();
-			});
-			return false;
-		});
-	//随意拖拽结束
-	
-	//时钟开始 
-	function two(n){return n<10?"0"+n:""+n}
-	function fnTime(){
-		var myTime=new Date();
-		var iYear=myTime.getFullYear(); 
-		var iMonth=myTime.getMonth()+1;
-		var iDate=myTime.getDate();
-		var iDay=myTime.getDay();
-		var iHour=myTime.getHours();
-		var iMin=myTime.getMinutes();
-		var iSec=myTime.getSeconds();
-		if(iDay===0) day="星期日";
-		if(iDay===1) day="星期一";
-		if(iDay===2) day="星期二";
-		if(iDay===3) day="星期三";
-		if(iDay===4) day="星期四";
-		if(iDay===5) day="星期五";
-		if(iDay===6) day="星期六";
-		var str= "现在时间："+iYear+"年"+two(iMonth)+"月"+two(iDate)+"日"+" "+day+" "+two(iHour)+":"+two(iMin)+":"+two(iSec);
-		$("#spanTime").html(str);
-		}
-	fnTime();
-	var timer=null;
-	clearInterval(timer);
-	timer=setInterval(fnTime,1000);
-	//时钟结束
-	
 	//通过类选择器获取dom开始
 	function getByClass(oParent,sClass){
 		var aEle=oParent.getElementsByTagName("*");
@@ -311,6 +324,23 @@ window.onload=function()
 	oAll.onmouseout=function(){
 		startMove(oAll,{width:80,height:80,opacity:90,fontSize:14});
 		};	
+	
+	//随意拖拽开始	
+	$(".drag").mousedown(function(ev){
+		var x;
+		var y;
+		x=ev.pageX-$(this).offset().left;
+		y=ev.pageY-$(this).offset().top;
+		$(document).mousemove(function(ev){
+			$(".drag").css("left",ev.pageX-x);
+			$(".drag").css("top",ev.pageY-y);
+			});
+		$(document).mouseup(function(){
+			$(document).off();
+			});
+			return false;
+		});
+	//随意拖拽结束
 	
 	//图片轮播开始
 	var oImageDiv=document.getElementById("images");
@@ -449,6 +479,33 @@ window.onload=function()
 		game();
 		ctl.value="重新开始";
 	}
+	
+	//footer部分时钟开始 
+	function two(n){return n<10?"0"+n:""+n}
+	function fnTime(){
+		var myTime=new Date();
+		var iYear=myTime.getFullYear(); 
+		var iMonth=myTime.getMonth()+1;
+		var iDate=myTime.getDate();
+		var iDay=myTime.getDay();
+		var iHour=myTime.getHours();
+		var iMin=myTime.getMinutes();
+		var iSec=myTime.getSeconds();
+		if(iDay===0) day="星期日";
+		if(iDay===1) day="星期一";
+		if(iDay===2) day="星期二";
+		if(iDay===3) day="星期三";
+		if(iDay===4) day="星期四";
+		if(iDay===5) day="星期五";
+		if(iDay===6) day="星期六";
+		var str= "现在时间："+iYear+"年"+two(iMonth)+"月"+two(iDate)+"日"+" "+day+" "+two(iHour)+":"+two(iMin)+":"+two(iSec);
+		$("#spanTime").html(str);
+		}
+	fnTime();
+	var timer=null;
+	clearInterval(timer);
+	timer=setInterval(fnTime,1000);
+	//时钟结束
 }
 		
 		
