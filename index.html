@@ -24,7 +24,7 @@
 <style>
 	/*样式重置开始*/
 	body,div,ul,li,dl,dd,ol,h1,h2,h3,h4,h5,h6,p,img{margin:0;padding:0;font-size:13px;}
-	a,a img{border:0;text-decoration:none;}
+	a,img{border:0;text-decoration:none;}
 	a:hover {text-decoration:underline;}
 	ul{list-style:none;}
 	/*样式重置结束*/
@@ -37,7 +37,7 @@
 	#header .hTop{height:70px;text-align:center;background:url(img/headTop.jpg)}
 	#header .hTop strong{font:bold 40px/70px Arial,sans-serif;color:white;letter-spacing:35px }
 	#header .nav{background:#C6DDFB}
-	#header ul{height:30px;list-style:none;}
+	#header ul{height:30px;}
 	#header li,#header li a{float:left;}
 	#header li a span{line-height:30px;font:16px/30px Arial,sans-serif;letter-spacing:5px;padding:0px 30px;}
 	#header li a:visited{color:#888888;}
@@ -53,7 +53,7 @@
 	.mainInfo .left .myInfo li{margin:11px 9px;}
 	.mainInfo .left .myInfo h2{margin-top:38px;font-size:16px;}
 	
-	.mainInfo .right{width:797px;height:650px;float:right;position:relative;}
+	.mainInfo .right{width:797px;height:650px;position:relative;color:#004398;float:right;}
 	.right .info{position:absolute;left:50px;top:10px;}
 	.info h2{font-size:18px;margin-top:20px;margin-bottom:-5px;}
 	.info h3{font-size:15px;margin-top:15px;}
@@ -62,33 +62,37 @@
 	/*中部选项卡1样式结束*/
 	
 	/*中部选项卡2样式开始*/
-	.mainProject{background:#0099FF;position:relative}
-	.mainProject .text{display:inline-block;float:left;}
-	.btn{margin:6px;}
-	.btn input{width:290px;margin:5px 1px 5px 2px }
-	.text p{border:10px solid #C9C3C6;background:#FCFCCD;width:582px;}
-	
-	/*仿新浪微博开始*/
-	#chatBox{position:relative;width:390px;height:300px;float:left;margin-top:11px;}
+	.mainProject{width:1000px;height:650px;clear:both;}
+	.mainProject #mainProjectTop{width:1000px;height:380px;background:#0099FF;position:relative;}
+	.mainProject #mainProjectTop .textB{width:600px;height:380px;display:inline-block;position:absolute;margin:4px 0 5px 3px;}
+	.mainProject #mainProjectTop .textB .btnB{display:inline-block;}
+	.mainProject #mainProjectTop .textB .btnB input{width:283px;margin:5px;}
+	.mainProject #mainProjectTop .textB p{width:568px;border:10px solid #C9C3C6;line-height:20px;margin-left:5px;margin-top:8px}
+		/*仿新浪微博开始*/
+	#chatBox{width:390px;height:380px;display:inline-block;position:absolute;right:0;margin-top:10px;}
 	#chatBoxUl{width:380px;height:245px;border:1px solid black;overflow:hidden;}
 	#chatBoxUl div{border-bottom:1px dashed #000000;padding:5px;filter:alpha(opacity:10);opacity:0.1;word-wrap:break-word;line-height:25px;}
-	#chatBox textarea{resize:none;}
+	#chatBox textarea{resize:none;width:376px;height:70px;overflow:hidden;margin-bottom:5px;}
 	#chatBox strong{color:red;}
-	/*仿新浪微博结束*/
+		/*仿新浪微博结束*/
+	#slideShow{width:1000px;height:270px;position:relative;background:red;padding-top:25px;padding-bottom:25px;}
+	.mainProject #relDiv{width:640px;height:220px;position:relative;margin:0 auto;overflow:hidden;}
+	.mainProject #relDiv ul{position:absolute;left:0;top:0px;width:1280px;}
+	#relDiv li{width:160px;height:220px;float:left;}
+	.mainProject #slideShow #pre{width:60px;height:60px;position:absolute;background:url(img/btn.gif) no-repeat;left:120px;top:105px;z-index:2;}
+	.mainProject #slideShow #next{width:60px;height:60px;position:absolute;background:url(img/btn.gif) no-repeat 0 -60px;right:120px;top:105px;}	
+		
+		
+		
+		
 	
-	.mainProject #slideShow{width:1000px;height:304px;background:red;clear:both;position:absolute;bottom:0;}
-	.mainProject #relativeDiv{width:640px;height:220px;position:relative;background:red;margin:28px auto;background:#003399;}
-	#relativeDiv ul{position:absolute;left:0;top:0px;}
-	#relativeDiv ul li {width:160px;height:220px;float:left;}
-	#slideShow #pre{width:60px;height:60px;position:absolute;background:url(img/btn.gif) no-repeat;display:block;left:120px;top:124px;}
-	#slideShow #next{width:60px;height:60px;position:absolute;background:url(img/btn.gif) no-repeat 0 -60px;display:block;right:120px;top:124px;}
 	/*中部选项卡2样式结束*/
 	
 	/*中部选项卡3样式开始*/
 	.anyValue{height:150px;background:#CCCCCC;padding:5px}
-	#wid,#hei,#opa,#fon,#all{width:80px;height:80px;border:3px solid #000000;background:red;;text-align:center;line-height:80px;padding:3px;filter:alpha(opacity=90);opacity:0.9;margin:20px 30px auto 30px;display:inline-block}
-	.mainMove #move{width:600px;height:490px;background:#0066CC;display:inline-block;}
-	.mainMove .drag{width:100px;height:100px;background:#FF0033;position:absolute;color:white;line-height:100px;font:bold 18px;text-align:center;cursor:pointer;}
+	#wid,#hei,#opa,#fon,#all{width:80px;height:80px;border:3px solid #000000;background:red;;text-align:center;line-height:80px;padding:3px;filter:alpha(opacity=90);opacity:0.9;margin:20px 30px auto 30px;float:left;}
+	
+	.drag{width:100px;height:100px;background:#FF0033;position:absolute;color:white;line-height:100px;font:bold 18px;text-align:center;cursor:pointer;}
 			/*图片轮换播样式开始*/
 	.play{width:400px;height:430px;margin-top:25px;background:#999999;position:absolute;right:0;display:inline-block;}
 	.bigPic{width:400px;height:320px;position:relative;overflow:hidden;}
@@ -146,12 +150,12 @@
 	.all_bg{position:relative;width:800px;height:600px;float:left;background:url(src/background.jpg) no-repeat;}
 	#canvas1{position:absolute;top:0;left:0;z-index:1;}
 	#canvas2{position:absolute;top:0;left:0;z-index:0;}
-	#title{height:50px;line-height:50px;background:#0064B9;text-align:center;font-size:24px;color:#FF8D4B;}
+	#title{height:50px;line-height:50px;background:#0064B9;text-align:center;font-size:24px;color:#002C63;}
 	#gameRight{width:200px;height:600px;background:#CCCCCC;display:inline-block;float:right;}
 	#gameRight input{width:200px;height:50px;font-size:22px;color:red;}
 	#gameRight #gameDescription{padding:5px;}
 	#gameRight h3{font-size:16px;margin-top:5px;margin-bottom:10px;}
-	#gameRight span{line-height:25px;font-size:13px;color:blue}
+	#gameRight span{line-height:25px;font-size:13px;color:#004276;}
 	/*中部选项卡4样式结束*/
 	
 	/*底部样式*/
@@ -191,7 +195,7 @@
                         <li>学历：全日制硕士</li>
                         <li>学校：中国科技大学</li>
                         <li>专业：生物工程</li>
-                        <li>手机：<span>+86 1709 346 8110</span></li>
+                        <li>手机：<span>17093468110</span></li>
                         <li>邮箱：<span>409666040@qq.com</span></li>
                     </ul>
                     <h2>求职意向</h2>
@@ -228,7 +232,7 @@
                         <p>Photoshop简单切图；<br />
                             熟悉常见的熟悉浏览器兼容性及解决方法；<br />
                             熟悉HTML、CSS、JaveScript以及jquery，能够熟练使用它们进行web标准化页面布局，能够手工编写和修改代码；<br />
-                            熟悉Firebug等开发调试工具；熟悉DOM/BOM/Ajax/Jsonp；<br />
+                            熟悉Firebug等开发调试工具；<br />熟悉DOM/BOM/Ajax/Jsonp；<br />熟悉性能优化常见方法；<br />熟悉标签语义化；<br />css3 transition transform等特性；
                         </p>
                         
                     </li>
@@ -245,46 +249,54 @@
         
          <!--第二个选项卡内容开始-->
         <div class="mainProject main">
-            <div class="text">
-               <div class="btn">
-                <input class="btn1" type="button" value="点我：数组【20px,60px,28px,3px】带单位排序"/>
-                <input class="text1" placeholder="结果在此显示" type="text" /><br/>
-                <input class="btn2" type="button" value="点我：数组【2,3,6,2,6】去重"/>
-                <input class="text2" placeholder="结果在此显示" type="text" /><br/>
-                <input class="btn3" type="button" value="点我：字符串'string'倒序"/>
-                <input class="text3" placeholder="结果在此显示" type="text" /><br/>
-                <input class="btn4" type="button" value="正则：检测邮箱是否输入正确" />
-                <input class="text4" placeholder="请输入一个邮箱" type="text" /><br/>
-                <input class="btn5" type="button" value="0-100中随机生成10个不重复的数字（方法1）"/>
-                <input class="text5" placeholder="方法1结果在此显示" type="text" /><br/>
-                <input class="btn6" type="button" value="0-100中随机生成10个不重复的数字（方法2）"/>
-                <input class="text6" placeholder="方法2结果在此显示" type="text" /><br/>
-                <input class="btn7" type="button" value="0-100中随机生成10个不重复的数字（方法3）"/>
-                <input class="text7" placeholder="方法3结果在此显示" type="text" /><br/>
-               </div>  
+              
+           
+            <div id="mainProjectTop">
+                <div class="textB">
+                   
+                   <div class="btnB">
+                    <input class="btn1" type="button" value="点我：数组【20px,60px,28px,3px】带单位排序"/>
+                    <input class="text1" placeholder="结果在此显示" type="text" /><br/>
+                    <input class="btn2" type="button" value="点我：数组【2,3,6,2,6】去重"/>
+                    <input class="text2" placeholder="结果在此显示" type="text" /><br/>
+                    <input class="btn3" type="button" value="点我：字符串'string'倒序"/>
+                    <input class="text3" placeholder="结果在此显示" type="text" /><br/>
+                    <input class="btn4" type="button" value="正则：检测邮箱是否输入正确" />
+                    <input class="text4" placeholder="请输入一个邮箱" type="text" /><br/>
+                    <input class="btn5" type="button" value="0-100中随机生成10个不重复的数字（方法1）"/>
+                    <input class="text5" placeholder="方法1结果在此显示" type="text" /><br/>
+                    <input class="btn6" type="button" value="0-100中随机生成10个不重复的数字（方法2）"/>
+                    <input class="text6" placeholder="方法2结果在此显示" type="text" /><br/>
+                    <input class="btn7" type="button" value="0-100中随机生成10个不重复的数字（方法3）"/>
+                    <input class="text7" placeholder="方法3结果在此显示" type="text" /><br/>
+                   </div>  
+                	<p class="scaleText"><span id="scaleSpan">User Experience Design(用户体验设计)，简称UED。UED是进行产品策划的主力之一，他们用自己的知识、经验、设计能力拿出设计方案。UED不只是互联网专家，还是行业专家。能够用自己的互联网知识来设计出行业专家想实现的操作，而付诸以商业营销。UED主要是从IT行业发展而来的。在计算机大型机的年代，计算机运算能力有限，为了更有效率地、更充分地利用计算机，采取的方式是：由“人类” 来适应 “程序（软件） ”、普通用户适应程序员的偏好与习</span>......<a id="scaleA" href="javascript:;"><< 收缩</a></p>
+                    
+                </div>
             
-                <p class="scaleText"><span id="scaleSpan">User Experience Design(用户体验设计)，简称UED。UED是进行产品策划的主力之一，他们用自己的知识、经验、设计能力拿出设计方案。UED不只是互联网专家，还是行业专家。能够用自己的互联网知识来设计出行业专家想实现的操作，而付诸以商业营销。UED主要是从IT行业发展而来的。在计算机大型机的年代，计算机运算能力有限，为了更有效率地、更充分地利用计算机，采取的方式是：由“人类” 来适应 “程序（软件） ”、普通用户适应程序员的偏好与习惯、用户适应软件供应商提供的产品</span>......<a id="scaleA" href="javascript:;"><< 收缩</a></p>
-            </div>
+          
+                <div id="chatBox">
+                    <div id="chatBoxUl"></div>
+                    <textarea></textarea>
+                    <span>仿微博发布效果：你还可以输入<strong id="textNum">140</strong>个字。</span>
+                    <input type="button" id="send" value="发送"/>
+                </div>
+            </div> 
             
-           <!-- <div class="drag">点我随意拖动</div>-->
-            <div id="chatBox">
-                <div id="chatBoxUl"></div>
-                <textarea cols="51" rows="4"></textarea>
-                <span>仿微博发布效果：你还可以输入<strong>140</strong>个字。</span>
-                <input type="button" id="send" value="发送"/>
-            </div>
             <div id="slideShow">
             	<a id="pre" href="#"></a>
                 <a id="next" href="#"></a>
-                <div id="relativeDiv">
-                    <ul>
-                        <li><img src="img/a.jpg"/></li>
+                <div id="relDiv">
+                	<ul>
+                    	<li><img src="img/a.jpg" /></li>
                         <li><img src="img/b.jpg" /></li>
                         <li><img src="img/c.jpg" /></li>
                         <li><img src="img/d.jpg" /></li>
                     </ul>
                 </div>
-            </div>
+            </div> 
+           
+           
         </div>
         
         <!--第二个选项卡内容结束-->

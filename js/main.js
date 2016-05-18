@@ -112,59 +112,74 @@ window.onload=function()
 	$("#chatBox").find("textarea").keyup(function()
 	{
 		var len=$(this).val().length;
-		$("strong").html(maxLength-len);
+		$("#textNum").html(maxLength-len);
 		
-		if(parseInt($("strong").html())<0)
+		if(parseInt($("#textNum").html())<0)
 		{
-			$("strong").html("0");
+			$("#textNum").html("0");
 			$(this).val($(this).val().substring(0,141));
 		}
 	});
 	$("#send").click(function()
 	{
-		if(maxLength==$("strong").html()) alert("请输入内容");
+		if(maxLength==$("#textNum").html()) alert("请输入内容");
 		else
 		{
 			var oDiv=$("<div>"+$("textarea").val()+"</div>");
 			oDiv.prependTo($("#chatBoxUl"));
 			
 			$("textarea").val("");
-			$("strong").html(maxLength);
+			$("#textNum").html(maxLength);
 			
 			var iHeight=parseInt(oDiv.css("height"));
 			oDiv.css("height","0");
 			oDiv.animate({height:iHeight}).animate({opacity:100},300,"linear");
 		}
 	});
+	
 	//仿新浪微博结束
 	
 	//图片无缝滚动开始
-	/*
-	var oDiv=document.getElementById("relativeDiv");
-	var oUl=oDiv.getElementsByTagName("ul");
 	
-	oUl.innerHTML+=oUl.innerHTML;
-	var aLi=oDiv.getElementsByTagName("li");
-	oUl.style.width=aLi[0].offsetWidth*aLi.length+"px";
-	var speed=3;
+	var oDivSS=document.getElementById("relDiv");
+	var oUlSS=oDivSS.getElementsByTagName("ul")[0];
 	
-	function slide()
-	{
-		oUl.style.left=oUl.offsetLeft+speed+"px";
-		if(oUl.offsetLeft<-oUl.offsetWidth/2) oUl.style.left=0+"px";
-		if(oUl.offsetLeft>0) oUl.style.left=-oUl.offsetWidth+"px";
-	}
-	var timer=setInterval(slide,30);
-	oDiv.onmouseover=function()
-	{
-		clearInterval(timer);
-	}
-	oDiv.onmouseout=function()
-	{
-		timer=setInterval(slide,30);
-	}
-	oDiv.getElementsByTagName("a")[0].onclick=function(){speed=-5;};
-	oDiv.getElementsByTagName("a")[1].onclick=function(){speed=5;};*/
+	var aLiSS=oUlSS.getElementsByTagName("li");
+	var timerSS=null;
+	var sp=5;
+	oUlSS.innerHTML+=oUlSS.innerHTML;
+	//oUlSS.style.width=aLiSS[0].offsetWidth*aLiSS.length+"px";
+	var oPreSS=document.getElementById("pre");
+	var oNextSS=document.getElementById("next");
+	function slide(){
+		
+		oUlSS.style.left=oUlSS.offsetLeft-sp+"px";
+		if(oUlSS.offsetLeft<-oUlSS.offsetWidth/2)
+		{    
+			oUlSS.style.left=0+"px";
+				
+			}
+		if(oUlSS.offsetLeft>0)
+		{
+			oUlSS.style.left=-oUlSS.offsetWidth/2+"px";
+		}
+		
+		
+		}
+	timerSS=setInterval(slide,30);
+	oDivSS.onmouseover=function()
+		{
+			clearInterval(timerSS);
+		}
+		
+	oDivSS.onmouseout=function()
+		{
+			timerSS=setInterval(slide,30);
+		}
+	oPreSS.onclick=function(){sp=5;};
+	oNextSS.onclick=function(){sp=-5;};
+	
+	
 	//图片无缝滚动结束
 	
 	//从0-100数字中随机产生10个不重复的数字函数开始
@@ -327,6 +342,7 @@ window.onload=function()
 	
 	//随意拖拽开始	
 	$(".drag").mousedown(function(ev){
+		console.log(ev)
 		var x;
 		var y;
 		x=ev.pageX-$(this).offset().left;
