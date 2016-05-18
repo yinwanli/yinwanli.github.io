@@ -146,7 +146,7 @@ window.onload=function()
 	
 	var aLiSS=oUlSS.getElementsByTagName("li");
 	var timerSS=null;
-	var sp=5;
+	var sp=4;
 	oUlSS.innerHTML+=oUlSS.innerHTML;
 	//oUlSS.style.width=aLiSS[0].offsetWidth*aLiSS.length+"px";
 	var oPreSS=document.getElementById("pre");
@@ -176,8 +176,8 @@ window.onload=function()
 		{
 			timerSS=setInterval(slide,30);
 		}
-	oPreSS.onclick=function(){sp=5;};
-	oNextSS.onclick=function(){sp=-5;};
+	oPreSS.onclick=function(){sp=4;};
+	oNextSS.onclick=function(){sp=-4;};
 	
 	
 	//图片无缝滚动结束
