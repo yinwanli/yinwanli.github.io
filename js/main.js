@@ -1,6 +1,6 @@
 window.onload=function()
 {
-	//选项卡切换JavaScript代码
+	//导航栏选项卡切换JavaScript代码
 	var oList=document.getElementsByClassName("list")[0];
 	var aLi=oList.getElementsByTagName("li");
 	var aDiv=document.getElementsByClassName("main");
@@ -14,6 +14,7 @@ window.onload=function()
 			{
 				aDiv[i].style.display="none";
 				aLi[i].className="";
+				
 			}
 			this.className="active";
 			aDiv[this.index].style.display="block";
@@ -29,7 +30,7 @@ window.onload=function()
 		});*/
 	//选项卡切换结束
 	
-	
+//中部第二个选项卡内容开始	
 	//带单位排序开始
 	$(".btn1").click(function(){
 		var arr=["20px","60px","28px","3px"];
@@ -38,9 +39,9 @@ window.onload=function()
 			return parseInt(a)-parseInt(b);
 			}));
 	});
-		//带单位排序结束
+	//带单位排序结束
 		
-		//数组去重开始
+	//数组去重开始
 	var arr2=[2,3,6,2,6];
 	function removeDuplicate(arr)
 	{
@@ -86,8 +87,9 @@ window.onload=function()
 			alert("您输入的格式不正确");
 		}
 		});
-	
 	//正则邮箱检测结束
+	
+	
 	
 	//文字收缩开始
 	var onOff=true;
@@ -140,7 +142,6 @@ window.onload=function()
 	//仿新浪微博结束
 	
 	//图片无缝滚动开始
-	
 	var oDivSS=document.getElementById("relDiv");
 	var oUlSS=oDivSS.getElementsByTagName("ul")[0];
 	
@@ -151,21 +152,13 @@ window.onload=function()
 	//oUlSS.style.width=aLiSS[0].offsetWidth*aLiSS.length+"px";
 	var oPreSS=document.getElementById("pre");
 	var oNextSS=document.getElementById("next");
-	function slide(){
-		
+	function slide()
+	{
 		oUlSS.style.left=oUlSS.offsetLeft-sp+"px";
-		if(oUlSS.offsetLeft<-oUlSS.offsetWidth/2)
-		{    
-			oUlSS.style.left=0+"px";
+		if(oUlSS.offsetLeft<-oUlSS.offsetWidth/2) oUlSS.style.left=0+"px";
 				
-			}
-		if(oUlSS.offsetLeft>0)
-		{
-			oUlSS.style.left=-oUlSS.offsetWidth/2+"px";
-		}
-		
-		
-		}
+		if(oUlSS.offsetLeft>0) oUlSS.style.left=-oUlSS.offsetWidth/2+"px";
+	}
 	timerSS=setInterval(slide,30);
 	oDivSS.onmouseover=function()
 		{
@@ -178,16 +171,14 @@ window.onload=function()
 		}
 	oPreSS.onclick=function(){sp=4;};
 	oNextSS.onclick=function(){sp=-4;};
-	
-	
 	//图片无缝滚动结束
 	
 	//从0-100数字中随机产生10个不重复的数字函数开始
 	//第一种方法
 	function getRandom1()
 	{
-		var s="";
-		var next;
+		var s="";//字符串
+		var next;//随机产生的数字
 		for(var i=0;i<10;i++)
 		{
 			next=Math.round(Math.random()*100);
@@ -217,7 +208,8 @@ window.onload=function()
 		return arr.slice(0,10);
 	}
 	 //第三种方法：json对象,key值是唯一的,key值可以为数字
-	  function getRandom3(){
+	  function getRandom3()
+	  {
 		  var arr=[];
 		  var json={};
 		  while(arr.length<10){
@@ -255,11 +247,11 @@ window.onload=function()
 		}	
 	//通过类选择器获取dom开始
 	
-	//获取dom属性javascript写法开始
+	//获取dom属性开始
 	function getStyle(obj,attr){
 		return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj,false)[attr];
 		}
-	//获取dom属性javascript写法结束
+	//获取dom属性结束
 	
 	//运动框架完美函数开始
 	function startMove(obj,json,fnEnd)
@@ -298,7 +290,6 @@ window.onload=function()
 				}
 		},30);
 	}
-	
 	//运动框架完美函数结束
 	var oWid=document.getElementById("wid");
 	oWid.onmouseover=function(){
