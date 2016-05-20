@@ -68,8 +68,11 @@ ul{list-style:none;}
 /*中部选项卡3样式开始*/
 .mainMove{}
 .anyValue{height:150px;background:#CCCCCC;padding:5px}
-#wid,#hei,#opa,#fon,#all{width:80px;height:80px;border:3px solid #000000;background:red;;text-align:center;line-height:80px;padding:3px;filter:alpha(opacity=90);opacity:0.9;margin:20px 30px auto 30px;float:left;}
-.drag{width:100px;height:100px;background:#FF0033;position:absolute;color:white;font:italic bold 16px/100px arial,sans-serif;text-align:center;cursor:pointer;}
+#wid,#hei,#opa,#fon,#all{width:80px;height:80px;border:3px solid #000000;background:red;;text-align:center;line-height:80px;padding:3px;filter:alpha(opacity=90);opacity:0.9;margin:20px 20px auto 30px;float:left;}
+#jq1{width:10px;height:80px;border:3px solid #000000;background:red;;text-align:center;line-height:80px;padding:3px;float:left;margin:20px 0 auto 30px;}
+#jq2{width:80px;height:80px;border:3px solid #000000;background:red;;text-align:center;line-height:80px;padding:3px;float:left;margin:20px 0 auto 30px;}
+#jq3{width:10px;height:80px;border:3px solid #000000;background:red;;text-align:center;line-height:80px;padding:3px;float:left;margin:20px 0 auto 30px;}
+
 		/*图片轮换播样式开始*/
 .play{width:400px;height:430px;margin-top:25px;background:#999999;margin:25px auto;}
 .bigPic{width:400px;height:320px;position:relative;overflow:hidden;}

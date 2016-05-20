@@ -330,24 +330,29 @@ window.onload=function()
 	oAll.onmouseout=function(){
 		startMove(oAll,{width:80,height:80,opacity:90,fontSize:14});
 		};	
-	
-	//随意拖拽开始	
-	$(".drag").mousedown(function(ev){
-		console.log(ev)
-		var x;
-		var y;
-		x=ev.pageX-$(this).offset().left;
-		y=ev.pageY-$(this).offset().top;
-		$(document).mousemove(function(ev){
-			$(".drag").css("left",ev.pageX-x);
-			$(".drag").css("top",ev.pageY-y);
-			});
-		$(document).mouseup(function(){
-			$(document).off();
-			});
-			return false;
+	$("#jq1").hover(function(){
+		$("#jq2").slideUp(200);
+		$("#jq3").fadeOut(200);
+		},function(){
+		$("#jq2").slideDown(200);
+		$("#jq3").fadeIn(200);
 		});
-	//随意拖拽结束
+	
+	
+	$("#jq2").hover(function(){
+		$("#jq1").css("background","blue");
+		$("#jq3").css("background","blue");
+		},function(){
+			$("#jq1").css("background","red");
+			$("#jq3").css("background","red");
+			});
+	$("#jq3").hover(function(){
+		$("#jq1").fadeTo(500,0.1);
+		$("#jq2").fadeTo(500,0.1);
+		},function(){
+			$("#jq1").fadeTo(500,1);
+			$("#jq2").fadeTo(500,1);
+			});
 	
 	//图片轮播开始
 	var oImageDiv=document.getElementById("images");
