@@ -35,7 +35,7 @@ ul{list-style:none;}
 .mainInfo .right{width:797px;height:650px;position:relative;color:#004398;float:right;}
 .right .info{position:absolute;left:50px;top:10px;}
 .info h2{font-size:18px;margin-top:8px;margin-bottom:-1px;}
-.info h3{font-size:15px;margin-top:8px;margin-bottom:-2px;}
+.info h3{font-size:15px;margin-top:3px;margin-bottom:-3px;}
 .info p{width:700px;margin-top:4px;margin-bottom:1px;line-height:20px;}
 
 
