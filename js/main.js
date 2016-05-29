@@ -518,6 +518,41 @@ window.onload=function()
 	clearInterval(timer);
 	timer=setInterval(fnTime,1000);
 	//时钟结束
+
+
+	var btnPage=document.getElementById("btnPage");
+		var aBtnP=btnPage.getElementsByTagName("input");
+		
+		var pageGroup=document.getElementById("pageGroup");
+		var aPage=pageGroup.getElementsByTagName("div");
+		
+		var nowN=0;
+		
+		aBtnP[0].onclick=function(){
+			if(nowN==5) return;
+			if(aPage[nowN].style.webkitTransform) aPage[nowN].style.webkitTransform="rotateX(-90deg)";
+			else if(aPage[nowN].style.mozTransform) aPage[nowN].style.mozTransform="rotateX(-90deg)";
+			else aPage[nowN].style.transform="rotateX(-90deg)";
+			nowN++;
+			
+			if(aPage[nowN].style.webkitTransform) aPage[nowN].style.webkitTransform="rotateX(0deg)";
+			else if(aPage[nowN].style.mozTransform) aPage[nowN].style.mozTransform="rotateX(0deg)";
+			else aPage[nowN].style.transform="rotateX(0deg)";
+			}
+		aBtnP[1].onclick=function(){
+			if(nowN==0) return;
+			if(aPage[nowN].style.webkitTransform) aPage[nowN].style.webkitTransform="rotateX(90deg)";
+			else if(aPage[nowN].style.mozTransform) aPage[nowN].style.mozTransform="rotateX(90deg)";
+			else aPage[nowN].style.transform="rotateX(90deg)";
+			nowN--;
+			if(aPage[nowN].style.webkitTransform) aPage[nowN].style.webkitTransform="rotateX(0deg)";
+			else if(aPage[nowN].style.mozTransform) aPage[nowN].style.mozTransform="rotateX(0deg)";
+			else aPage[nowN].style.transform="rotateX(0deg)";
+			}
+
+
+
+
 }
 		
 		
