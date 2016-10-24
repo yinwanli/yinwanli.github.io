@@ -40,6 +40,12 @@ ul{list-style:none;}
 
 
 .mainInfo .right #line{height:2px;background:#004398;}
+
+
+.experience .mobile{margin:10px 0;}
+.experience a{display:inline-block;margin-right:10px;}
+.experience p{color:#C06;}
+
 /*中部选项卡1样式结束*/
 
 /*中部选项卡2样式开始*/
