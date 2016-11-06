@@ -33,10 +33,11 @@ ul{list-style:none;}
 .mainInfo .left .myInfo h2{margin-top:38px;font-size:16px;}
 
 .mainInfo .right{width:797px;height:650px;position:relative;color:#004398;float:right;}
-.right .info{position:absolute;left:50px;top:10px;}
+.right .info{position:absolute;left:30px;top:0;}
 .info h2{font-size:18px;margin-top:8px;margin-bottom:-1px;}
 .info h3{font-size:15px;margin-top:3px;margin-bottom:-3px;}
-.info p{width:700px;margin-top:4px;margin-bottom:1px;line-height:20px;}
+.info p{width:760px;margin-top:4px;margin-bottom:1px;line-height:20px;}
+.info .education p{line-height:15px;}
 
 
 .mainInfo .right #line{height:2px;background:#004398;}
@@ -71,7 +72,7 @@ ul{list-style:none;}
 .mainProject #relDiv ul{position:absolute;left:0;top:0px;width:1280px;}
 #relDiv li{width:160px;height:220px;float:left;}
 .mainProject #slideShow #pre{width:60px;height:60px;position:absolute;background:url(../img/btn.gif) no-repeat;left:120px;top:105px;z-index:2;}
-.mainProject #slideShow #next{width:60px;height:60px;position:absolute;background:url(../img/btn.gif) no-repeat 0 -60px;right:120px;top:105px;}	
+.mainProject #slideShow #next{width:60px;height:60px;position:absolute;background:url(../img/btn.gif) no-repeat 0 -60px;right:120px;top:105px;}
 	/*无缝滚动结束*/
 /*中部选项卡2样式结束*/
 

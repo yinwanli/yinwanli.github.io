@@ -1,26 +1,26 @@
 window.onload=function()
 {
 	//导航栏选项卡切换JavaScript代码
-	var oList=document.getElementsByClassName("list")[0];
-	var aLi=oList.getElementsByTagName("li");
-	var aDiv=document.getElementsByClassName("main");
-	
-	for(var i=0;i<aLi.length;i++)
-	{
-		aLi[i].index=i;
-		aLi[i].onclick=function()
-		{
-			for(var i=0;i<aDiv.length;i++)
-			{
-				aDiv[i].style.display="none";
-				aLi[i].className="";
-				
-			}
-			this.className="active";
-			aDiv[this.index].style.display="block";
-		}
-	}
-		
+	// var oList=document.getElementsByClassName("list")[0];
+	// var aLi=oList.getElementsByTagName("li");
+	// var aDiv=document.getElementsByClassName("main");
+
+	// for(var i=0;i<aLi.length;i++)
+	// {
+	// 	aLi[i].index=i;
+	// 	aLi[i].onclick=function()
+	// 	{
+	// 		for(var i=0;i<aDiv.length;i++)
+	// 		{
+	// 			aDiv[i].style.display="none";
+	// 			aLi[i].className="";
+
+	// 		}
+	// 		this.className="active";
+	// 		aDiv[this.index].style.display="block";
+	// 	}
+	// }
+
 		//选项卡切换jquery代码
 	/*$(".list").find("li").click(function(){
 		$(".list").find("li").attr("class","");
@@ -29,8 +29,8 @@ window.onload=function()
 		$(".main").eq($(this).index()).css("display","block");
 		});*/
 	//选项卡切换结束
-	
-//中部第二个选项卡内容开始	
+
+//中部第二个选项卡内容开始
 	//带单位排序开始
 	$(".btn1").click(function(){
 		var arr=["20px","60px","28px","3px"];
@@ -40,7 +40,7 @@ window.onload=function()
 			}));
 	});
 	//带单位排序结束
-		
+
 	//数组去重开始
 	var arr2=[2,3,6,2,6];
 	function removeDuplicate(arr)
@@ -63,7 +63,7 @@ window.onload=function()
 		$(".text2").val(removeDuplicate(arr2));
 		});
 	//数组去重结束
-	
+
 	//字符串倒序开始
 	$(".btn3").click(function(){
 		var str="string";
@@ -71,12 +71,12 @@ window.onload=function()
 		$(".text3").val(str.split("").reverse().join(""));
 		});
 	//字符串倒序结束
-	
-	
+
+
 	//正则邮箱检测开始
 	$(".btn4").click(function(){
 		var reg=/^[a-z0-9]+\w+@[a-z0-9]+\.[a-z]+$/gi;
-		
+
 		if(!$(".text4").val()){
 			alert("请输入一个邮箱");
 			}
@@ -88,14 +88,14 @@ window.onload=function()
 		}
 		});
 	//正则邮箱检测结束
-	
-	
-	
+
+
+
 	//文字收缩开始
 	var onOff=true;
 	var str=$("#scaleSpan").html();
 	$("#scaleA").click(function(){
-		
+
 		if(onOff){
 		$("#scaleSpan").html(str.substring(0,50));
 		$("#scaleA").html(">> 展开");
@@ -108,14 +108,14 @@ window.onload=function()
 			}
 		});
 	//文字收缩结束
-	
+
 	//仿新浪微博开始
 	var maxLength=140;
 	$("#chatBox").find("textarea").keyup(function()
 	{
 		var len=$(this).val().length;
 		$("#textNum").html(maxLength-len);
-		
+
 		if(parseInt($("#textNum").html())<0)
 		{
 			$("#textNum").html("0");
@@ -129,22 +129,22 @@ window.onload=function()
 		{
 			var oDiv=$("<div>"+$("textarea").val()+"</div>");
 			oDiv.prependTo($("#chatBoxUl"));
-			
+
 			$("textarea").val("");
 			$("#textNum").html(maxLength);
-			
+
 			var iHeight=parseInt(oDiv.css("height"));
 			oDiv.css("height","0");
 			oDiv.animate({height:iHeight}).animate({opacity:100},300,"linear");
 		}
 	});
-	
+
 	//仿新浪微博结束
-	
+
 	//图片无缝滚动开始
 	var oDivSS=document.getElementById("relDiv");
 	var oUlSS=oDivSS.getElementsByTagName("ul")[0];
-	
+
 	var aLiSS=oUlSS.getElementsByTagName("li");
 	var timerSS=null;
 	var sp=4;
@@ -156,7 +156,7 @@ window.onload=function()
 	{
 		oUlSS.style.left=oUlSS.offsetLeft-sp+"px";
 		if(oUlSS.offsetLeft<-oUlSS.offsetWidth/2) oUlSS.style.left=0+"px";
-				
+
 		if(oUlSS.offsetLeft>0) oUlSS.style.left=-oUlSS.offsetWidth/2+"px";
 	}
 	timerSS=setInterval(slide,30);
@@ -164,7 +164,7 @@ window.onload=function()
 		{
 			clearInterval(timerSS);
 		}
-		
+
 	oDivSS.onmouseout=function()
 		{
 			timerSS=setInterval(slide,30);
@@ -172,7 +172,7 @@ window.onload=function()
 	oPreSS.onclick=function(){sp=4;};
 	oNextSS.onclick=function(){sp=-4;};
 	//图片无缝滚动结束
-	
+
 	//从0-100数字中随机产生10个不重复的数字函数开始
 	//第一种方法
 	function getRandom1()
@@ -185,15 +185,15 @@ window.onload=function()
 			if(s.indexOf(next)===-1)
 			{
 				s+=next+",";
-				
+
 			}
 			else {i=i-1;}
-			
+
 		}
 			return s.split(",").slice(0,-1);
 			//return s.slice(0,-1).split(",");也可以
 	}
-	
+
 	//第二种方法
 	//思路:for循环从0到100的数组,然后将这101个数利用sort()随机打乱,然后通过将这个数组的length改写为10,便取到了10个不同的数
 	function getRandom2()
@@ -202,7 +202,7 @@ window.onload=function()
 		for(var i=0;i<100;i++)
 		{
 			arr[i]=i;
-			
+
 		}
 		arr.sort(function(a,b){return Math.random()-0.5});
 		return arr.slice(0,10);
@@ -234,25 +234,25 @@ window.onload=function()
 		   $(".text7").val(getRandom3());
 		   });
 		//从0-100数字中随机产生10个不重复的数字函数结束
-		
+
 	//通过类选择器获取dom开始
 	function getByClass(oParent,sClass){
 		var aEle=oParent.getElementsByTagName("*");
 		var aResult=[];
-		
+
 		for(var i=0;i<aEle.length;i++){
 			if(aEle[i].className==sClass) aResult.push(aEle[i]);
 			}
 			return aResult;
-		}	
+		}
 	//通过类选择器获取dom开始
-	
+
 	//获取dom属性开始
 	function getStyle(obj,attr){
 		return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj,false)[attr];
 		}
 	//获取dom属性结束
-	
+
 	//运动框架完美函数开始
 	function startMove(obj,json,fnEnd)
 	{
@@ -266,22 +266,22 @@ window.onload=function()
 				var cur=0;
 				if(attr=="opacity") cur=Math.round(parseFloat(getStyle(obj,attr))*100);
 				else cur=parseInt(getStyle(obj,attr));
-				
+
 				//速度
 				var speed=(json[attr]-cur)/6;
 				speed=speed>0?Math.ceil(speed):Math.floor(speed);
-				
-				
+
+
 				//计算公式
 				if(attr=="opacity"){
 					obj.style.filter="alpha(opacity:"+(cur+speed)+")";
 					obj.style.opacity=(cur+speed)/100;
-					
+
 					}
 				else obj.style[attr]=cur+speed+"px";
-				
+
 				if(cur!=json[attr]) bStop=false;//判断终点
-				
+
 			}
 				//循环结束回调函数
 			if(bStop){
@@ -298,7 +298,7 @@ window.onload=function()
 	oWid.onmouseout=function(){
 		startMove(oWid,{width:80});
 		};
-	
+
 	var oHei=document.getElementById("hei");
 	oHei.onmouseover=function(){
 		startMove(oHei,{height:120});
@@ -306,30 +306,30 @@ window.onload=function()
 	oHei.onmouseout=function(){
 		startMove(oHei,{height:80});
 		};
-		
+
 	var oOpa=document.getElementById("opa");
 	oOpa.onmouseover=function(){
 		startMove(oOpa,{opacity:20});
-		};	
+		};
 	oOpa.onmouseout=function(){
 		startMove(oOpa,{opacity:90});
 		};
-		
+
 	var oFon=document.getElementById("fon");
 	oFon.onmouseover=function(){
 		startMove(oFon,{fontSize:26});
-		};	
+		};
 	oFon.onmouseout=function(){
 		startMove(oFon,{fontSize:14});
-		};	
-	
+		};
+
 	var oAll=document.getElementById("all");
 	oAll.onmouseover=function(){
 		startMove(oAll,{width:120,height:120,opacity:20,fontSize:26});
-		};	
+		};
 	oAll.onmouseout=function(){
 		startMove(oAll,{width:80,height:80,opacity:90,fontSize:14});
-		};	
+		};
 	$("#jq1").hover(function(){
 		$("#jq2").slideUp(200);
 		$("#jq3").fadeOut(200);
@@ -337,8 +337,8 @@ window.onload=function()
 		$("#jq2").slideDown(200);
 		$("#jq3").fadeIn(200);
 		});
-	
-	
+
+
 	$("#jq2").hover(function(){
 		$("#jq1").css("background","blue");
 		$("#jq3").css("background","blue");
@@ -353,7 +353,7 @@ window.onload=function()
 			$("#jq1").fadeTo(500,1);
 			$("#jq2").fadeTo(500,1);
 			});
-	
+
 	//图片轮播开始
 	var oImageDiv=document.getElementById("images");
 	var btnPre=getByClass(oImageDiv,"pre")[0];
@@ -370,7 +370,7 @@ window.onload=function()
 	var infoArr=["王 凯","刘 涛","蒋 欣","靳 东","杨 紫","王子文"];
 	var nowIndex=2;
 	var now=0;
-	
+
 		//遮罩和按钮显示开始
 	btnPre.onmouseover=maskLeft.onmouseover=function(){
 		startMove(btnPre,{opacity:100});
@@ -385,8 +385,8 @@ window.onload=function()
 		startMove(btnNext,{opacity:0});
 		}
 		//遮罩和按钮显示结束
-	
-		//小图点击效果和移入移出开始	
+
+		//小图点击效果和移入移出开始
 	for(var i=0;i<aLiSmall.length;i++)
 	{
 		aLiSmall[i].index=i;
@@ -403,7 +403,7 @@ window.onload=function()
 		};
 	}
 		//小图点击效果和移入移出结束
-	
+
 		//切换效果关键函数
 	function tab()
 	{
@@ -416,13 +416,13 @@ window.onload=function()
 		startMove(aLiBig[now],{height:320});
 		oText.innerHTML=infoArr[now];
 		oNum.innerHTML=now+1+"/"+aLiBig.length;
-		
+
 		if(now==0) startMove(oUlSmall,{left:0});
 		else if(now==aLiSmall.length-1) startMove(oUlSmall,{left:-(now-2)*aLiSmall[0].offsetWidth});
 		else startMove(oUlSmall,{left:-(now-1)*aLiSmall[0].offsetWidth});
 	}
-	
-	
+
+
 		//大图按钮点击效果开始
 	btnPre.onclick=function(){
 		now--;
@@ -435,7 +435,7 @@ window.onload=function()
 		tab();
 		}
 		//大图按钮点击效果结束
-		
+
 		//自动播放
 	var timer=setInterval(btnNext.onclick,2000);
 	oImageDiv.onmouseover=function(){
@@ -445,21 +445,21 @@ window.onload=function()
 		timer=setInterval(btnNext.onclick,2000);
 		}
 	//图片轮播结束
-	
-	//链式展开弹窗开始	
+
+	//链式展开弹窗开始
 	var oBtn=document.getElementById('btn');
 	var oBottom=document.getElementById('bottom');
 	var oTop=document.getElementById('top');
 	var oBtnClose=document.getElementById('btnClose');
-	
+
 	oTop.style.display='block';
 	var initBottomRight=parseInt(getStyle(oBottom, 'right'));
 	var initTopBottom=parseInt(getStyle(oTop, 'bottom'));
 	oTop.style.display='none';
-	
+
 	oBtn.onclick=openHandler;
 	oBtnClose.onclick=closeHandler;
-	
+
 	function openHandler()
 	{
 		startMove(oBottom, {right: 0}, function (){
@@ -469,7 +469,7 @@ window.onload=function()
 		oBtn.className='butHide';
 		oBtn.onclick=closeHandler;
 	}
-	
+
 	function closeHandler()
 	{
 		startMove(oTop, {bottom: initTopBottom}, function (){
@@ -481,22 +481,22 @@ window.onload=function()
 		oBtn.onclick=openHandler;
 	}
 		//链式展开弹窗结束
-		
+
 	var ctl=document.getElementById("control");
 
 	ctl.onclick=startGame;
-	
+
 	function startGame()
 	{
 		game();
 		ctl.value="重新开始";
 	}
-	
-	//footer部分时钟开始 
+
+	//footer部分时钟开始
 	function two(n){return n<10?"0"+n:""+n}
 	function fnTime(){
 		var myTime=new Date();
-		var iYear=myTime.getFullYear(); 
+		var iYear=myTime.getFullYear();
 		var iMonth=myTime.getMonth()+1;
 		var iDate=myTime.getDate();
 		var iDay=myTime.getDay();
@@ -522,19 +522,19 @@ window.onload=function()
 
 	var btnPage=document.getElementById("btnPage");
 		var aBtnP=btnPage.getElementsByTagName("input");
-		
+
 		var pageGroup=document.getElementById("pageGroup");
 		var aPage=pageGroup.getElementsByTagName("div");
-		
+
 		var nowN=0;
-		
+
 		aBtnP[0].onclick=function(){
 			if(nowN==5) return;
 			if(aPage[nowN].style.webkitTransform) aPage[nowN].style.webkitTransform="rotateX(-90deg)";
 			else if(aPage[nowN].style.mozTransform) aPage[nowN].style.mozTransform="rotateX(-90deg)";
 			else aPage[nowN].style.transform="rotateX(-90deg)";
 			nowN++;
-			
+
 			if(aPage[nowN].style.webkitTransform) aPage[nowN].style.webkitTransform="rotateX(0deg)";
 			else if(aPage[nowN].style.mozTransform) aPage[nowN].style.mozTransform="rotateX(0deg)";
 			else aPage[nowN].style.transform="rotateX(0deg)";
@@ -554,8 +554,7 @@ window.onload=function()
 
 
 }
-		
-		
-		
-		
-		
+
+
+
+
