@@ -22,12 +22,12 @@ window.onload=function()
 	// }
 
 		//选项卡切换jquery代码
-	/*$(".list").find("li").click(function(){
+	$(".list").find("li").click(function(){
 		$(".list").find("li").attr("class","");
 		$(".main").css("display","none");
 		$(this).attr("class","active");
 		$(".main").eq($(this).index()).css("display","block");
-		});*/
+		});
 	//选项卡切换结束
 
 //中部第二个选项卡内容开始
